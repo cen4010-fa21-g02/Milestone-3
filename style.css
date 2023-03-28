@@ -177,7 +177,7 @@ body {
 
 #content {
     position: relative;
-    width: calc(100% - 280px);
+    width: calc(100% - 580px);
     left: 280px;
     transition: .3s ease;
 }
@@ -334,7 +334,7 @@ body {
 /* MAIN */
 
 #content main {
-    width: 100%;
+    width: 40%;
     padding: 36px 24px;
     font-family: var(--poppins);
     max-height: calc(100vh - 56px);
@@ -412,7 +412,6 @@ body {
     font-size: 36px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #content main .box-info li:nth-child(1) .bx {
