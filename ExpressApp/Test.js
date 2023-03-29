@@ -16,6 +16,6 @@ app.get("/", cors(), async(req, res) => {
 
 app.listen(port, () => {
     console.log('Listening at p://localhost:${port}')
-}) p.listen(port, () => {
+}) app.listen(port, () => {
     console.log('Listening at p://localhost:${port}')
 })
