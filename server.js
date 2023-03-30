@@ -25,13 +25,13 @@
 
  app.get("/", function(req, res) {
 
-     res.sendFile(__dirname + "/html-mongo/index2.html")
+     res.sendFile(__dirname + "/html-mongo/register.html")
  })
 
 
  app.get("/", function(req, res) {
 
-     res.sendFile(__dirname + "/login.html")
+     res.sendFile(__dirname + "/html-mongo/login.html")
  });
 
 
