@@ -25,7 +25,7 @@
 
  app.get("/", function(req, res) {
 
-     res.sendFile(__dirname + "/index2.html")
+     res.sendFile(__dirname + "/html-mongo/index2.html")
  })
 
 
@@ -85,7 +85,7 @@
 
  });
 
- app.listen(3000, function() {
+ app.listen(2000, function() {
 
 
      console.log("server is running on 3000");

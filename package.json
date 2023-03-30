@@ -1,8 +1,8 @@
 {
-    "name": "html-mongo",
+    "name": "Milestone-3",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "Website ini merupakan hasil slicing dari Figma ke responsive website menggunakan HTML, CSS, dan JavaScript",
+    "main": "sever.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server.js"
@@ -15,5 +15,13 @@
         "express": "^4.18.2",
         "mongoose": "^7.0.3",
         "nodemon": "^2.0.22"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cen4010-fa21-g02/Milestone-3.git"
+    },
+    "bugs": {
+        "url": "https://github.com/cen4010-fa21-g02/Milestone-3/issues"
+    },
+    "homepage": "https://github.com/cen4010-fa21-g02/Milestone-3#readme"
 }
