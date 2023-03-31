@@ -81,6 +81,7 @@ app.post("/login", async function (req, res) {
 
  });
 
- app.listen(2000, function() {
+ //the server url is http://localhost:3000
+ app.listen(3000, function() {
     console.log("server is running on 3000");
  })
