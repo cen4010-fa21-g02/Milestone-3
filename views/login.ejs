@@ -15,7 +15,6 @@
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
   </head>
 
   <body>
@@ -62,15 +61,17 @@
                       <div class="pt-1 mb-4">
                         <button
                           class="btn btn-primary btn-lg btn-block col-md-6 col-lg-12"
-                          type="button" onClick="login()">
+                          type="button"
+                          onClick="login()">
                           Login
                         </button>
                       </div>
-                      <div id="mydiv"> 
+                      <div id="mydiv">
                         <p class="mb-4 pb-lg-2" style="color: #393f81">
                           Don't have an account?
                           <a href="/register" style="color: #393f81"
-                            >Register here</a>
+                            >Register here</a
+                          >
                         </p>
                       </div>
                     </form>
@@ -84,31 +85,31 @@
     </section>
 
     <script>
-      function login(){
-        
+      function login() {
         var username = $("#username").val();
         var password = $("#password").val();
         $.ajax({
           type: "POST",
-              url: "localhost:3000/login",
-              data: {username: username, password: password},
-              success: function(data) {
-                if (data.status === "success") {
-                  // redirect to home page or desired page after successful login
-                  window.location.replace("/dashboard");
-                } else {
-                  // display error message
-                  $('#mydiv').html('<p class="mb-4 pb-lg-2" style="color: red">' + data.message + '</p>');
-                }
-              },
-              error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-              }
-            });
+          url: "localhost:3000/login",
+          data: { username: username, password: password },
+          success: function (data) {
+            if (data.status === "success") {
+              // redirect to home page or desired page after successful login
+              window.location.replace("/dashboard");
+            } else {
+              // display error message
+              $("#mydiv").html(
+                '<p class="mb-4 pb-lg-2" style="color: red">' +
+                  data.message +
+                  "</p>"
+              );
+            }
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          },
+        });
       }
-
     </script>
-    
   </body>
 </html>
-
