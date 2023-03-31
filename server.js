@@ -18,25 +18,20 @@
      username: String,
      password: String,
      cpassword: String
-
  }
+
 
  const Users = mongoose.model("Users", usersSchema);
 
- app.get("/", function(req, res) {
+ app.get("/register", function(req, res) {
 
      res.sendFile(__dirname + "/html-mongo/register.html")
  })
 
-
- app.get("/", function(req, res) {
+ app.get("/login", function(req, res) {
 
      res.sendFile(__dirname + "/html-mongo/login.html")
  });
-
-
-
-
 
  app.post("/", function(req, res) {
 
@@ -58,35 +53,34 @@
 
      });
 
-
-
      newUsers.save();
 
      res.redirect("/");
 
-
  })
 
 
- app.post("/login", async function(req, res) {
-     const { username, password } = req.body;
-     const user = await Users.findOne({ username: username });
+app.post("/login", async function (req, res) {
+     
+    const { username, password } = req.body;
+    const user = await Users.findOne({ username: username });
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    
      if (!user) {
          res.send("Incorrect credentials");
          return;
      }
-     const passwordMatch = await bcrypt.compare(password, user.password);
+    
      if (!passwordMatch) {
          res.send("Incorrect credentials");
          return;
 
      }
+    
      res.send("Login successful");
 
  });
 
  app.listen(2000, function() {
-
-
-     console.log("server is running on 3000");
+    console.log("server is running on 3000");
  })
